@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='NGModel'>
+<head>
+    <meta charset="UTF-8">
+    <title>ng-Model</title>
+    <link rel="stylesheet" href="CSS/ngmodel.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+   <div ng-controller='MainController' class='container'>
+    <ul>
+     <li class="span4">
+      <div class='well row-fluid one container'>
+       <h3> {{modelOne}}</h3>
+        <input ng-model='modelOne'>
+    </div></li>
+         <li class="span4">
+    <div class='well row-fluid container '>
+        <h3> {{ modelTwo }}</h3>
+        <input ng-model = 'modelTwo'>    
+             </div></li>
+         <li class="span4">
+    <div class='well row-fluid container'>
+        <h3 class='span4 offset 8'> {{modelThree}}</h3>
+        <input ng-model='modelThree'>
+             </div></li>
+    </ul>
+    
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js">
+    </script> 
+    <script src="JS/ngmodel.js"></script>
+    
+</body>
+</html>

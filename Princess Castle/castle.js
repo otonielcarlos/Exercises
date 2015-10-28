@@ -37,21 +37,24 @@ function getRandomInt() {
     var num = Math.floor(Math.random() * (2 - 0 + 1) + 0);
     if (num===0){
         playerOne.goHit();
-} else if (num===1){
+    } else if (num===1){
       playerOne.gotPowerUp();
-} else if(num===2){
+    } else if(num===2){
         playerOne.addCoin();
-} 
+    } 
 }
 
 function run() {
-x=setInterval(function(){
-    getRandomInt();
-    if(playerOne.gameActive===false){
-        clearInterval(x)}
-    
-playerOne.printFun();
-},500);
-}
+    x=setInterval(function(){
+        getRandomInt();
+        if(playerOne.gameActive===false){
+            clearInterval(x)}
 
-run();
+    playerOne.printFun();
+    },500);
+}
+var array = [0, 1 ,2, 3, 4, 5, 6];
+
+
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='Mighty'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mighty Clicker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+
+<body>
+   
+    <div class="container-fluid" ng-controller='MainController'>
+        <div class="row">
+            <div>
+                <h1 > {{blueV}} </h1>
+                <button class='btn btn-primary' ng-click='addBlue()'>Blue</button>
+            </div>
+            <div>
+                <h1>{{ redV }}</h1>
+                <button class="btn btn-danger" ng-click='addRed()'>Red</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src='app.js'></script>
+    <script src="Services/blueService.js"></script>
+    <script src="Services/redService.js"></script>
+</body>
+
+</html>

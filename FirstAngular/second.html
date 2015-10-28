@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = 'Angular2'>
+<head>
+    <meta charset="UTF-8">
+    <title>My Second App</title>
+</head>
+<body>
+    <div ng-controller='MainController'>
+        <h1>The result is: {{ res }}</h1>
+                
+        <input ng-model='firstNum'>
+        <input ng-model='secondNum'>
+    
+        <button ng-click='sum()'> Sum </button>
+        
+    </div>
+    
+    <div ng-controller='SecondController'>
+        <h1>The result is: {{ mul }}</h1>
+        <input ng-model='thirdNum'>
+        <input ng-model='otherNum'>
+        
+        <button ng-click='result()'> Multiply</button>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js">
+    </script> 
+    <script src="JS/app2.js"></script>
+</body>
+</html>

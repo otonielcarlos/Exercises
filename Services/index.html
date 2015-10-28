@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='Services'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Services</title>
+    <link rel="stylesheet" href="service.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div ng-controller="MainController">
+        <div class="container rec">
+
+            <input type="text" placeholder="Name" ng-model='name' class='col-xs-12-md-4-lg-4 input'>
+            <input type="text" placeholder='img Url' ng-model='url' class='col-xs-12-md-4-lg-4 input'>
+            <input type="text" placeholder='Description' ng-model='desc' class='col-xs-12-md-4-lg-4 input'>
+            <button class="btn btn-primary col-xs-6-md-6-lg-6" ng-click='updateCartoonService(name,url,desc)'>Submit</button>
+        </div>
+        <div ng-repeat='cartoon in cartoons'>
+            <h1> {{ cartoon.name }}</h1>
+            <p> {{ cartoon.desc }} </p>
+            <img src="{{ cartoon.url }}" alt="">
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src='app.js'></script>
+    <script src="Services/services.js"></script>
+</body>
+
+</html>

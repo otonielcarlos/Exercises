@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='MyApp'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body ng-controller='HitList' background='http://i.stack.imgur.com/JICXS.jpg'>
+    <div class="container border">
+        <div class="row">
+            <div class='rec'>
+                <h1 class='text-center don'>Don Corleone's Hit List</h1>
+            </div>
+            <div ng-repeat='person in people' class="col-md-4">
+                <img src="{{person.image}}" alt="" class='img-responsive img'>
+                <h3 class='text-center name box'> {{person.name}}</h3>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

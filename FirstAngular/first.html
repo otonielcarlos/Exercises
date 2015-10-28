@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = 'learningAngular'>
+<head>
+    <meta charset="UTF-8">
+    <title>My First Angular App</title>
+</head>
+<body>
+
+    <div ng-controller="MainController">
+      
+      <div ng-repeat="person in people">
+            <h1>Name: {{ person.name }}</h1>
+            <h3>Name: {{ person.age }}</h3> 
+            <ul>
+                <li ng-repeat='kids in person.kids'> {{ kids.name }} is his son, and he has {{ kids.age }} years old</li>
+            </ul> 
+  
+      </div>
+        
+        
+    </div>
+            
+
+                                
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js">
+    </script> 
+    <script src="JS/app.js"></script>                                       
+</body>
+
+</html>

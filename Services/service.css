@@ -1,0 +1,15 @@
+.rec {
+    
+    background-color: #00CCFF;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+}
+
+.input {
+
+width: 250px;
+border: 10px solid #00CCFF;
+
+}
+

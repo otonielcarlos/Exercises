@@ -1,20 +1,17 @@
 .rec {
     height: 80px;
-  
     background-color: #FFCC00
 }
 
 .large {
     height: 400px;
-  
     background-color: #FF0000 
 
 }
 
 .whiteblock{
 
-  height: 250px;
-  
+    height: 250px;
     background-color: white; 
 
 }
@@ -36,7 +33,6 @@ font-family: marioFont;
     color: #FF0000;
     text-align: center;
     
-    
 }
 
 .normal{
@@ -49,13 +45,11 @@ font-family: marioFont;
 
 .smallyellow {
     height: 80px;
-  
     background-color: #FFCC00
 }
 
-
 .mushroom{
     max-width:100%;
-max-height:100%;
+    max-height:100%;
 
 }
