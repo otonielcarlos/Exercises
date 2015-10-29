@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='MyApp'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+
+<body ng-controller='MainController'>
+    <div class='container border'>
+        <div class="row">
+            <h1 class='text-center'>To Do List</h1>
+            <div class='col-md-3 form-group'>
+                <input type="text" class='form-control' placeholder="Title" ng-model='newToDo.title'>
+            </div>
+            <div class='col-md-3 form-group'>
+                <input type="text" class='form-control' placeholder="Price" ng-model='newToDo.price'>
+            </div>
+            <div class='col-md-3 form-group'>
+                <input type="text" class='form-control' placeholder="URL Image" ng-model='newToDo.image'>
+            </div>
+            <div class='col-md-3 form-group'>
+                <div class='form-control'>
+                    <input type="checkbox" ng-model='newToDo.completed' label="Completed">
+                    <label for="">Completed</label>
+                </div>
+            </div>
+            <div class='col-md-12 form-group'>
+                <input type="text" class='form-control' placeholder="Description" ng-model='newToDo.description'>
+            </div>
+            <div class="col-md-12">
+                <button class="btn btn-primary center-block" ng-click='submit(newToDo)'>Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container border">
+        <div class="row">
+            <table style="width:100%" class='text-center table'>
+                <tr class='text-center'>
+                    <th class='text-center'>Title</th>
+                    <th class='text-center'>Description</th>
+                    <th class='text-center'>Price</th>
+                    <th class='text-center'>Completed</th>
+                    <th class='text-center'>Delete</th>
+                    <th class='text-center'>Image</th>
+                </tr>
+                <div>
+                    <tr ng-repeat='new in todoList'>
+                        <td>{{new.title}}</td>
+                        <td>{{new.description}}</td>
+                        <td>{{new.price}}</td>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger" ng-click='deleteItem(newToDo)'>Delete</button>
+                        </td>
+                        <td><img src="{{new.image}}" alt=""></td>
+                    </tr>
+                </div>
+            </table>
+
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src='app.js'></script>
+</body>
+
+</html>
