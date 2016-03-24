@@ -1,6 +1,3 @@
-//var GetItem = function () {
-//
-//}
 var ToDo = function () {
     this.items = function () {
         this.item = sessionStorage.getItem('todo');
@@ -10,16 +7,32 @@ var ToDo = function () {
         }
         return this.todo;
     };
-}
+    this.addTodo = function () {
+        this.items = document.getElementById('task').value;
+        todosArray.push(this.items);
+        sessionStorage.setItem('todo', JSON.stringify(this.todosArray));
+        displayList();
+        return false;
+    }
+};
+var todosArray = [];
 
-function addTodo() {
+function displayList() {
     var todo = new ToDo();
-    todo.items = document.getElementById('task').value;
-    todoArray.push(todo.items);
-    sessionStorage.setItem('todo', JSON.stringify(todoArray));
-    displayList();
-    return false;
-}
+    var list = '<ul>';
+    for (var i = 0; i < todosArray.length; i++) {
+        list += '<li>' + todosArray[i] + '<button class="remove" id="' + i + '">x</button></li>';
+    };
+    list += '</ul>';
+        document.getElementById('todos').innerHTML = list;
+    //        var buttons = document.getElementsByClassName('remove');
+    //        for (var i = 0; i < buttons.length; i++) {
+    //            buttons[i].addEventListener('click', remove);
+};
+
+var addButton = new ToDo();
+document.getElementById('add').addEventListener('click', addButton.addTodo);
+displayList();
 
 //function remove() {
 //    var todo = new ToDo();
@@ -29,21 +42,3 @@ function addTodo() {
 //    displayList();
 //    return false;
 //}
-var todoArray = [];
-
-function displayList() {
-    var todo = new ToDo();
-    var list = '<ul>';
-    for (var i = 0; i < todoArray.length; i++) {
-        list += '<li>' + todoArray[i] + '<button class="remove" id="' + i + '">x</button></li>';
-    };
-    list += '</ul>';
-    document.getElementById('todos').innerHTML = list;
-    //    var buttons = document.getElementsByClassName('remove');
-    //    for (var i = 0; i < buttons.length; i++) {
-    //        buttons[i].addEventListener('click', remove);
-    //    };
-}
-
-document.getElementById('add').addEventListener('click', addTodo);
-displayList();
