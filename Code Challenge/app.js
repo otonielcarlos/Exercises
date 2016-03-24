@@ -1,19 +1,21 @@
-var GetItem = function () {
-    this.item = sessionStorage.getItem('todo');
-    this.todo = "";
-    if (this.item !== null) {
-        this.todo = JSON.parse(this.item);
-    }
-    return this.todo;
-}
+//var GetItem = function () {
+//
+//}
 var ToDo = function () {
-    this.item = GetItem();
+    this.items = function () {
+        this.item = sessionStorage.getItem('todo');
+        this.todo = "";
+        if (this.item !== null) {
+            this.todo = JSON.parse(this.item);
+        }
+        return this.todo;
+    };
 }
 
 function addTodo() {
     var todo = new ToDo();
-    todo.item = document.getElementById('task').value;
-    todoArray.push(todo.item);
+    todo.items = document.getElementById('task').value;
+    todoArray.push(todo.items);
     sessionStorage.setItem('todo', JSON.stringify(todoArray));
     displayList();
     return false;
@@ -28,6 +30,7 @@ function addTodo() {
 //    return false;
 //}
 var todoArray = [];
+
 function displayList() {
     var todo = new ToDo();
     var list = '<ul>';
@@ -36,10 +39,10 @@ function displayList() {
     };
     list += '</ul>';
     document.getElementById('todos').innerHTML = list;
-//    var buttons = document.getElementsByClassName('remove');
-//    for (var i = 0; i < buttons.length; i++) {
-//        buttons[i].addEventListener('click', remove);
-//    };
+    //    var buttons = document.getElementsByClassName('remove');
+    //    for (var i = 0; i < buttons.length; i++) {
+    //        buttons[i].addEventListener('click', remove);
+    //    };
 }
 
 document.getElementById('add').addEventListener('click', addTodo);
