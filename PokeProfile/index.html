@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='MyApp'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>PokeProfile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller='MainController' background='http://imagesci.com/img/2013/05/sleeping-pikachu-wallpaper-5737-hd-wallpapers.jpg'>
+    <div class='container border'>
+        <div class="row">
+            <div class='col-md-12'>
+                <h1 class='text-center'>Enter Pokemon Number</h1>
+            </div>
+            <div class='col-md-12'>
+                <input type="text" placeholder="Pokemon Number" class='center-block'>
+            </div>
+            <div class="col-md-12">
+                <button class='glyphicon glyphicon-search btn btn-info center-block' ng-click='search()'>Search</button>
+            </div>
+
+            <div>
+                <h1 class='text-center'>{{ newPokemon.name }}</h1>
+            </div>
+            <div>
+                <p class='text-center'> {{ newPokemon.attack }}</p>
+            </div>
+            <div>
+                <p class='text-center'>{{ newPokemon.ability }}</p>
+            </div>
+            <div>
+                <img src="{{ newPokemon.img }}" alt="" class='center-block'>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+    <script src='app.js'></script>
+</body>
+
+</html>

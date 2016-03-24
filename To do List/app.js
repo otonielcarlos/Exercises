@@ -28,7 +28,7 @@ app.controller("MainController", ["$scope", "$http", function ($scope, $http) {
 
     $scope.deleteItem = function (newToDo) {
 
-        $http.delete('http://mean.codingcamp.us/todo/otoniel' + newToDo._id).then(function (response) {
+        $http.delete('http://mean.codingcamp.us/todo/otoniel/id' + newToDo._id).then(function (response) {
 
             alert('It was deleted');
         }, function (response) {

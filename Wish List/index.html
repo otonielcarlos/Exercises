@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="WishList">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wish List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container border">
+        <div class="row rec">
+            <div class='text-center'>
+                <h1>Wish List</h1>
+            </div>
+            <nav>
+                <a href="templates/tech.html">Tech Wish List</a>
+                <a href="templates/other.html">Other Wish List</a>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <wish-list class="col-md-6" ng-repeat="things in tech"></wish-list>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
