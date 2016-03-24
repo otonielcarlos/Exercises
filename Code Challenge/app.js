@@ -40,12 +40,3 @@ function displayList() {
     var addButton = new ToDo();
     document.getElementById('add').addEventListener('click', addButton.addTodo);
     displayList();
-
-    //function remove() {
-    //    var todo = new ToDo();
-    //    var id = todo.id;
-    //    todo.todos.splice(id, 1);
-    //    sessionStorage.setItem('todo', JSON.stringify(todo.todos));
-    //    displayList();
-    //    return false;
-    //}
