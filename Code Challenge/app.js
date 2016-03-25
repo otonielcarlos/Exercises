@@ -1,4 +1,5 @@
 var ToDo = function () {
+    this.todosArray = [];
     this.items = function () {
         this.item = sessionStorage.getItem('todo');
         this.todo = "";
@@ -9,27 +10,27 @@ var ToDo = function () {
     };
     this.addTodo = function () {
         this.items = document.getElementById('task').value;
-        todosArray.push(this.items);
-        sessionStorage.setItem('todo', JSON.stringify(todosArray));
+        this.todosArray.push(this.items);
+        sessionStorage.setItem('todo', JSON.stringify(this.todosArray));
         document.getElementById('task').value = "";
         displayList();
         return false;
     };
     this.remove = function () {
         this.id = this.getAttribute('id');
-        todosArray.splice(this.id, 1);
-        sessionStorage.setItem('todo', JSON.stringify(todosArray));
+        this.todosArray.splice(this.id, 1);
+        sessionStorage.setItem('todo', JSON.stringify(this.todosArray));
         displayList();
         return false;
     };
 };
-var todosArray = [];
+
 var todo = new ToDo();
 
 function displayList() {
     var list = '<ul>';
-    for (var i = 0; i < todosArray.length; i++) {
-        list += '<li>' + todosArray[i] + '<button class="remove" id="' + i + '">X</button></li>';
+    for (var i = 0; i < todo.todosArray.length; i++) {
+        list += '<li>' + todo.todosArray[i] + '<button class="remove" id="' + i + '">X</button></li>';
     };
     list += '</ul>';
     document.getElementById('todos').innerHTML = list;
