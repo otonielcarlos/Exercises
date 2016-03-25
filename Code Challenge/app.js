@@ -11,6 +11,7 @@ var ToDo = function () {
         this.items = document.getElementById('task').value;
         todosArray.push(this.items);
         sessionStorage.setItem('todo', JSON.stringify(todosArray));
+        document.getElementById('task').value = "";
         displayList();
         return false;
     };
@@ -28,7 +29,7 @@ var todo = new ToDo();
 function displayList() {
     var list = '<ul>';
     for (var i = 0; i < todosArray.length; i++) {
-        list += '<li>' + todosArray[i] + '<button class="remove" id="' + i + '">Delete</button></li>';
+        list += '<li>' + todosArray[i] + '<button class="remove" id="' + i + '">X</button></li>';
     };
     list += '</ul>';
     document.getElementById('todos').innerHTML = list;
@@ -36,6 +37,13 @@ function displayList() {
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', todo.remove);
     };
-}
+};
 document.getElementById('add').addEventListener('click', todo.addTodo);
+document.getElementById('task').onkeypress = function (e) {
+     if (!e) e = window.event;
+    if (e.keyCode == '13'){
+        todo.addTodo();
+        return false;
+    };
+};
 displayList();
