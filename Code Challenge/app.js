@@ -1,35 +1,36 @@
- ToDo = function () {
-    this.items = function () {
-        this.item = sessionStorage.getItem('todo');
+ var ToDo = function () {
+     this.todosArray = [];
+    ToDo.prototype.items = function () {
+        this.item = localStorage.getItem('todo');
         this.todo = "";
         if (this.item !== null) {
             this.todo = JSON.parse(this.item);
         }
         return this.todo;
     };
-    this.addTodo = function () {
+    ToDo.prototype.addTodo = function () {
         this.items = document.getElementById('task').value;
-        todosArray.push(this.items);
-        sessionStorage.setItem('todo', JSON.stringify(todosArray));
+        this.todosArray.push(this.items);
+        localStorage.setItem('todo', JSON.stringify(this.todosArray));
         document.getElementById('task').value = "";
         displayList();
         return false;
     };
-    this.remove = function () {
+    ToDo.prototype.remove = function () {
         this.id = this.getAttribute('id');
-        todosArray.splice(this.id, 1);
-        sessionStorage.setItem('todo', JSON.stringify(todosArray));
+        this.todosArray.splice(this.id, 1);
+        localStorage.setItem('todo', JSON.stringify(this.todosArray));
         displayList();
         return false;
     };
 };
 var todo = new ToDo();
-var todosArray = [];
+//var todosArray = [];
 
 function displayList() {
     var list = '<ul>';
-    for (var i = 0; i < todosArray.length; i++) {
-        list += '<li>' + '<button class="remove" id=" "'+ i +'" ">X</button>'+'  ' +todosArray[i] + '</li>';
+    for (var i = 0; i < todo.todosArray.length; i++) {
+        list += '<li>' + '<button class="remove" id=" "'+ i +'" ">X</button>'+' ' +todo.todosArray[i] + '</li>';
     };
     list += '</ul>';
     document.getElementById('todos').innerHTML = list;
