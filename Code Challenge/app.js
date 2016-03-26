@@ -29,7 +29,7 @@ var todosArray = [];
 function displayList() {
     var list = '<ul>';
     for (var i = 0; i < todosArray.length; i++) {
-        list += '<li>' + todosArray[i] + ' ' +'<button class="remove" id="' + i + '">X</button></li>';
+        list += '<li>' + '<button class="remove" id=" "'+ i +'" ">X</button>'+'  ' +todosArray[i] + '</li>';
     };
     list += '</ul>';
     document.getElementById('todos').innerHTML = list;

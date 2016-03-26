@@ -1,0 +1,64 @@
+input {
+    border: 5px solid white;
+    -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 0 10px 0;
+}
+
+body {
+    font-family: helvetica;
+    background-color: #fafafa;
+    margin: 0;
+}
+
+.main {
+    background: #FF4136;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    margin: 0;
+    /*    padding: 10;*/
+}
+
+#add,
+.remove {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#add {
+    background: rgb(28, 184, 65);
+    font-size: 125%;
+}
+
+#todos{
+font-size: 50px;
+}
+
+.remove {
+    background: rgb(202, 60, 60);
+}
+
+.center {
+   width: 100vw;
+    height: 100vh;
+}
+
+.input {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1 {
+    /*height: 100vh;*/
+    font-size: 150px;
+    color: white;
+    margin: 0;
+}
