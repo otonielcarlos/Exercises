@@ -25,13 +25,21 @@ ToDo.prototype.remove = function (position) {
     return false;
 };
 
+//ToDo.prototype.checked = function (check){
+//    this.todosArray.strike();
+//    sessionStorage.setItem('todo', JSON.stringify(this.todosArray));
+//    displayList();
+//    return false;
+//}
+
 var todo = new ToDo();
 
 function displayList() {
     var list = '<ul>';
     for (var i = 0; i < todo.todosArray.length; i++) {
         var item = todo.todosArray[i];
-        list += '<li>' + '<button class="remove" id=" ' + i + '">X</button>' + ' ' + item + '</li>';
+        list += '<li>' + '<button class="remove checked" id=" ' + i + '">X</button>'+ '   ' //+ '<input type="checkbox">' + ' '// 
+            + item + '</li>';
     };
     list += '</ul>';
     document.getElementById('todos').innerHTML = list;
@@ -39,12 +47,16 @@ function displayList() {
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function () {
             var id = this.getAttribute('id');
-//            console.log(id);
             todo.remove(id);
-            console.log(id);
-//            return false;
         });
     };
+//    var buttonChecked = document.getElementsByClassName('checked');
+//    for (var i = 0; i < buttonChecked.length; i++) {
+//    buttonChecked[i].addEventListener('click', function () {
+//    var check = this.getAttribute('id');
+//        todo.checked(check);
+//    });
+//    };
 };
 
 document.getElementById('add').addEventListener('click', function () {

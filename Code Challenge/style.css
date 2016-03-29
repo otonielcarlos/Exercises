@@ -1,11 +1,22 @@
 input {
-    border: 5px solid white;
-    -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+    border: 10px solid white;
+    -webkit-box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 0, 0, 0.1);
     padding: 15px;
     background: rgba(255, 255, 255, 0.5);
     margin: 0 0 10px 0;
+}
+
+li {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+    -webkit-transition: all 3s ease;
+    -moz-transition: all 3s ease;
+    -ms-transition: all 3s ease;
+    -o-transition: all 3s ease;
+    transition: all 3s ease;
 }
 
 body {
@@ -35,8 +46,8 @@ body {
     font-size: 125%;
 }
 
-#todos{
-font-size: 50px;
+#todos {
+    font-size: 50px;
 }
 
 .remove {
@@ -44,7 +55,7 @@ font-size: 50px;
 }
 
 .center {
-   width: 100vw;
+    width: 100vw;
     height: 100vh;
 }
 
