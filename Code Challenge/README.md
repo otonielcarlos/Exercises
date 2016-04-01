@@ -18,4 +18,4 @@ NOTE: Notice that next to every element inside the unordered list ```<ul></ul>``
 
 This component can be used to build a To Do list web application.
 
-    By Otoniel Carlos 
+By [Otoniel Carlos](https://github.com/otonielcarlos)  
