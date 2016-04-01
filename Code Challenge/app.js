@@ -11,6 +11,11 @@ ToDo.prototype.items = function () {
     return this.todo;
 };
 
+ToDo.prototype.deleteAll = function () {
+    this.todosArray.length = 0;
+    displayList();
+};
+
 ToDo.prototype.addTodo = function (item) {
     this.todosArray.push(item);
     sessionStorage.setItem('todo', JSON.stringify(this.todosArray));
@@ -24,22 +29,16 @@ ToDo.prototype.remove = function (position) {
     displayList();
     return false;
 };
-
-//ToDo.prototype.checked = function (check){
-//    this.todosArray.strike();
-//    sessionStorage.setItem('todo', JSON.stringify(this.todosArray));
-//    displayList();
-//    return false;
-//}
-
 var todo = new ToDo();
 
+
+
 function displayList() {
+
     var list = '<ul>';
     for (var i = 0; i < todo.todosArray.length; i++) {
         var item = todo.todosArray[i];
-        list += '<li>' + '<button class="remove checked" id=" ' + i + '">X</button>'+ '   ' //+ '<input type="checkbox">' + ' '// 
-            + item + '</li>';
+        list += '<li> ' + '<button class="remove" id=" ' + i + '">X</button>' + '   ' + item + '</li>';
     };
     list += '</ul>';
     document.getElementById('todos').innerHTML = list;
@@ -50,19 +49,18 @@ function displayList() {
             todo.remove(id);
         });
     };
-//    var buttonChecked = document.getElementsByClassName('checked');
-//    for (var i = 0; i < buttonChecked.length; i++) {
-//    buttonChecked[i].addEventListener('click', function () {
-//    var check = this.getAttribute('id');
-//        todo.checked(check);
-//    });
-//    };
+
 };
 
 document.getElementById('add').addEventListener('click', function () {
     var item = document.getElementById('task').value;
-    todo.addTodo(item);
-    console.log(item);
+    if (item.length === 0) {
+        HTMLButtonElement.disable = true;
+        alert("You need to type something cool");
+    } else {
+        todo.addTodo(item);
+        console.log(todo.todosArray);
+    }
     document.getElementById('task').value = "";
     return false;
 });
@@ -71,10 +69,50 @@ document.getElementById('task').onkeypress = function (e) {
     var item = document.getElementById('task').value;
     if (!e) e = window.event;
     if (e.keyCode == '13') {
-        todo.addTodo(item);
+        if (item.length === 0) {
+            HTMLButtonElement.disable = true;
+            alert("You need to type something cool");
+
+        } else {
+            todo.addTodo(item);
+            console.log(todo.todosArray);
+        }
         document.getElementById('task').value = "";
         return false;
     };
 };
+
+document.getElementById('delete').addEventListener('click', function () {
+
+    todo.deleteAll();
+    return false;
+});
+
+
+document.getElementById('delete').onkeypress = function (e) {
+    var item = document.getElementById('delete').value;
+    if (!e) e = window.event;
+    if (e.keyCode == '13') {
+           todo.deleteAll();
+        }
+        return false;
+    };
+
+window.addEventListener("keydown", keysPressed, false);
+var keys = [];
+
+function keysPressed(e) {
+    keys[e.keyCode] = true;
+    if (keys[27]) {
+        todo.deleteAll();        
+        e.preventDefault();
+            keys[e.keyCode] = false;
+
+        return false;
+
+    }
+
+}
+
 
 displayList();
