@@ -53,7 +53,7 @@ function displayList() {
 
 };
 
-// This code will trigger the addToDo function on the "Add To The List" button when clicked
+// This code will trigger the addToDo function on the "Add The List" button when clicked
 
 document.getElementById('add').addEventListener('click', function () {
     var item = document.getElementById('task').value;
@@ -85,6 +85,8 @@ document.getElementById('task').onkeypress = function (e) {
         return false;
     };
 };
+
+// This code will trigger the deleteAll function on the "Delete All" button when selected with 'Tab' and 'Enter' hit.
 
 document.getElementById('delete').addEventListener('click', function () {
 
