@@ -1,3 +1,4 @@
+// In here we create whatever we are going to type and add it to the list
 var ToDo = function () {
     this.todosArray = [];
 };
@@ -32,7 +33,7 @@ ToDo.prototype.remove = function (position) {
 var todo = new ToDo();
 
 
-
+// This function will display every element that has been typed
 function displayList() {
 
     var list = '<ul>';
@@ -52,6 +53,8 @@ function displayList() {
 
 };
 
+// This code will trigger the addToDo function on the "Add To The List" button when clicked
+
 document.getElementById('add').addEventListener('click', function () {
     var item = document.getElementById('task').value;
     if (item.length === 0) {
@@ -65,6 +68,7 @@ document.getElementById('add').addEventListener('click', function () {
     return false;
 });
 
+// This code will trigger the addToDo function when 'Enter' hit
 document.getElementById('task').onkeypress = function (e) {
     var item = document.getElementById('task').value;
     if (!e) e = window.event;
@@ -88,15 +92,18 @@ document.getElementById('delete').addEventListener('click', function () {
     return false;
 });
 
+// This code will trigger the deleteAll function on the "Delete All" button when clicked
 
 document.getElementById('delete').onkeypress = function (e) {
     var item = document.getElementById('delete').value;
     if (!e) e = window.event;
     if (e.keyCode == '13') {
-           todo.deleteAll();
-        }
-        return false;
-    };
+        todo.deleteAll();
+    }
+    return false;
+};
+
+// This code will trigger the deleteAll function when 'Escape' hit
 
 window.addEventListener("keydown", keysPressed, false);
 var keys = [];
@@ -106,7 +113,7 @@ function keysPressed(e) {
     if (keys[27]) {
         todo.deleteAll();        
         e.preventDefault();
-            keys[e.keyCode] = false;
+        keys[e.keyCode] = false;
 
         return false;
 
