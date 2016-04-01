@@ -3,7 +3,7 @@ Code Challenge
 
 In order to implement this component you'll have to follow this instructions:
 
-1. Add the JavaScript file into the HTML file that you plan to implement this component: 
+1. Add the JavaScript file into the HTML file where you plan to implement this component: 
 ```<script src="app.js"></script>```
 
 2. Create an input box with an "id='task'" : ```<input id="task">``` 
